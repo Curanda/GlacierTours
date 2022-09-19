@@ -40,29 +40,114 @@ body {
   height: 15rem;
   border-radius: 20px 20px 0 0;
   border: 25px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-hero--heading {
+  padding-left: 1.5rem;
+  color: #fff0f6;
+  text-shadow: 3px 4px 2px rgba(144, 252, 252, 1);
+  font-size: 330%;
+  font-weight: 600;
+  margin: 1rem 0 1rem 0;
+}
+
+.section-hero--cta {
+  max-width: 22rem;
+  height: 5rem;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  margin-left: 3%;
+  margin-right: 4%;
+  margin-top: 3%;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 2.3rem;
+  /* color: #ffd8a8; */
+}
+
+.section-hero--cta:before {
+  content: "";
+  background: linear-gradient(
+    40deg,
+    #8ce99a,
+    #748ffc,
+    #364fc7,
+    #a5d8ff,
+    #1864ab,
+    #99e9f2,
+    #0b7285,
+    #96f2d7,
+    #087f5b
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(4px);
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.section-hero--cta:active {
+  color: #000;
+}
+
+.section-hero--cta:active:after {
+  background: transparent;
+}
+
+.section-hero--cta:active:after {
+  background: transparent;
+}
+
+.section-hero--cta:hover:before {
+  opacity: 1;
+}
+
+.section-hero--cta:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .section-hero--description {
   text-align: center;
   font-weight: 500;
-  color:#dee2e6
+  color: #dee2e6;
   width: auto;
   height: 20rem;
   border-radius: 0 0 20px 20px;
   color: white;
   /* background-color: #1ccad8; */
   background: linear-gradient(0.49turn, black 30%, #3bc9db);
-}
-
-.section-hero--heading {
-  color: #fff0f6;
-  font-size: 3rem;
-  font-weight: 600;
-  margin: 0 0 1rem 0;
-}
-
-.section-hero--cta {
-  text-decoration: none;
-  font-size: 2.5rem;
-  color: #ffd8a8;
 }
